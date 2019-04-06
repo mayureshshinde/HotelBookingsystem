@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        
+       
+    </head>
+     <body>
+        <div ng-app="">
+            <!-- <form>
+                select your type:
+                <select ng-model="food">
+                    <option value="veg">veg</option>
+                    <option value="non-veg">non-veg</option>
+               
+                </select>
+            </form> -->
+            <form>
+                    select your type:
+                   <input type="radio" ng-model="food" value="veg">veg
+                   <input type="radio" ng-model="food" value="veg">non-veg
+                   
+                    
+                </form> 
+        
+                <div ng-switch="food">
+                    <div ng-switch-when="veg">
+                    <h3>here is your declicous dish </h3>
+                    </div>
+                    <div ng-switch-when="non-veg">
+                    <h3>here is your declicous non-veg dish </h3>
+                        </div>
+             </body>
+        
+         </html>
+
+               
+                
+     

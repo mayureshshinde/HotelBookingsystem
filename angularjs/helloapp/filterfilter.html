@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simpleDate</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        <script>
+                var app=angular.module('myApp',[]);
+                app.controller('citiesCtrl',function($scope){
+                    $scope.cities=["nagpur","pune","mumbai"]
+                });
+                
+                app.filter('myFormat',function(){
+                    return function(x){
+                        var i,c, txt = "";
+                        for(i=0; i < x.length;i++){
+                            c=x[i];
+                            if(i % 2 ==0){
+                              c=c.toUpperCase();  
+                            }
+                            txt +=c;
+        
+                        }
+                        return txt;
+                    };
+                });
+                </script>
+        
+       
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="citiesCtrl">
+            <p>logging with objects:</p>
+            <ul>
+                <li ng-repeat="city in cities">
+                    {{city | myFormat}}
+                </li>
+            </ul>
+
+        </div>
+        </body>
+        
+        
+
+    
+</html>

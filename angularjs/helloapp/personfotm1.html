@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>personform1</title>
+       <script src="script/angular.min.js"></script>
+       <script src="script/Myapp.js"></script>
+       <script src="script/myctrl.js"></script>
+       <script src="script/mydir.js"></script>
+       </head>
+<body>
+
+       
+        <div ng-app="Myapp" ng-controller="myCtrl" > 
+        <div class="my-directive"></div>
+        <!--  directive: my-directive -->
+        <h1 my-directive></h1>
+        <my-directive></my-directive><br>
+           {{firstName+" "+lastName}}
+        </div>
+        </body>
+        </html>

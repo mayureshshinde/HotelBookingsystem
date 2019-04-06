@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        <script>
+                var app=angular.module('myApp',[]);
+                app.controller('myCtrl',function($scope,$timeout){
+                   $scope.myheader="hello world";
+                  $timeout(function(){
+                      $scope.myheader="how are you today? ";
+
+                  
+                }, 2000);
+                });
+             </script>
+        
+       
+    </head>
+     <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+          <p>this header will change after two sec</p>
+          <h1>{{myheader}}</h1>
+
+        </div>
+            
+           
+     </body>
+        
+</html>

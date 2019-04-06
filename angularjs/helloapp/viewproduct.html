@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Product</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+       
+    </head>
+
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="productCtrl">
+           <table>
+                <tr ng-repeat="product in productData">
+                    <td>{{ product.id}}</td>
+                    <td>{{ product.name}}</td>
+                    <td>{{ product.brand}}</td>
+                    <td>{{ product.price}}</td>
+                </tr>
+           </table>
+           <p> Search Product: 
+               <select ng-model="selectedProduct" 
+                 ng-options="p.brand for p in productData">
+               </select>
+           </p>
+
+           <div>
+                <p>Details of selected product is: </p>
+                <p> Id: {{selectedProduct.id }}</p>
+                <p> Name: {{selectedProduct.name }}</p>
+                <p> Brand: {{selectedProduct.brand }}</p>
+                <p> Price: {{selectedProduct.price }}</p>
+           </div>
+        </div>
+        </div>
+
+        <script>
+            var app = angular.module('myApp', []);
+            app.service("productService", function($http){
+                var products=[];
+                this.getData = function(){
+                    return $http.get("http://127.0.0.1:8081/Data/product.json")
+                    .then(function(response){
+                        products = response.data.productRecords;
+                        console.log(products);
+                        return response.data.productRecords;
+                    });
+           }
+           });
+
+           app.controller('productCtrl', function($scope, productService){
+               $scope.productData = [];
+               $scope.fetchAllProducts = function(){
+                   productService.getData().then(function(data){
+                       $scope.productData = data;
+                   });
+               }
+               $scope.fetchAllProducts();
+           });
+
+
+
+        </script>
+
+
+    </body>
+
+</html>

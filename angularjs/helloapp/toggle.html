@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        <script>
+                var app=angular.module('myApp',[]);
+                app.controller('myCtrl',function($scope){
+                   $scope.showMe=false;
+                   $scope.myFunc=function(){
+                       $scope.showMe=!$scope.showMe;
+                   }
+                });
+             </script>
+        
+       
+    </head>
+     <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+           <button ng-click="myFunc()">click Me</button> 
+           <div ng-show="showMe">
+               <h1>Menu</h1>
+               <div>Pizza</div>
+               <div>pasta</div>
+               <div>kachori</div>
+
+        </div>
+            
+           
+     </body>
+        
+</html>

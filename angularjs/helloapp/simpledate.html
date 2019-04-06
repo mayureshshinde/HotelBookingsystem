@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simpleDate</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        
+       
+    </head>
+    <body>
+        <script>
+        angular.module('myApp',[])
+        .controller('myCtrl',function($scope){
+            $scope.birthDate=new Date(2013,0,22)
+        });
+        
+        </script>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <label for="dobid">Enter your birthDate</label>
+            <input type="date" ng-model="birthDate" id="dobid"/>
+            <p></p>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Click</title>
+        <script type="text/javascript" src="script/angular.min.js"></script>
+        
+       
+    </head>
+     <body>
+        <div ng-app="">
+            <form>
+                <P>pHOENIX pre-school Addmission</P>
+                <p>Enter child's Name:
+                <input mg-model="name"></p>
+                <p>Enter child's Age:
+                        <input type="number" ng-model="age"></p>
+
+
+
+            </form>
+            <div ng-if="age>=2.5 && age,3.05">
+                <h3>Dear{{name}} congrats you are selected for nursary</h3>
+
+
+
+            </div>
+            <div ng-if="age>=2.5 && age,3.05">
+                    <h3>Dear{{name}} congrats you are selected for jr.kg</h3>
+    
+    
+    
+            </div>
+            
+           
+     </body>
+        
+</html>

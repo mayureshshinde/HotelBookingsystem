@@ -1,0 +1,8 @@
+{
+    "productRecords":[
+        {"id":1001, "name":"Laptop", "brand":"Lenovo", "price":30000.00},
+        {"id":1003, "name":"Washing Machine", "brand":"Whirlpool", "price":45000.00},
+        {"id":1005, "name":"UHD TV", "brand":"Sony", "price":40000.00}
+
+    ]
+}
